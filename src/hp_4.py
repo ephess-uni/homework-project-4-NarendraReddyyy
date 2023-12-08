@@ -32,7 +32,7 @@ def fees_report(infile, outfile):
     """Calculates late fees per patron id and writes a summary report to
     outfile."""
     late_fees_dict=defaultdict(float)
-    with opne(infile,'r') as file:
+    with open(infile,'r') as file:
         reader = DictReader(file)
         for row in reader:
             date_due = datetime.strptime(row['date_due'],"%m/%d/%Y")
