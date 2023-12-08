@@ -25,7 +25,7 @@ def add_date_range(values, start_date):
     `start_date`.  The date, value pairs are returned as tuples
     in the returned list."""
     start_date = datetime.strptime(start_date,"%Y-%m-%d")
-    return [(start_date+timedelta(days=pos)) for pos,val in enumerate(values)]
+    return [(start_date+timedelta(days=pos),val) for pos,val in enumerate(values)]
 
 
 def fees_report(infile, outfile):
